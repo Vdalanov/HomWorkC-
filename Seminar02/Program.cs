@@ -268,45 +268,130 @@
 // FindingNumber(newarray,a);
 
 //Задайте одномерный массив из 12 случайных чисел. Найдите количество элементов массива, значения которых лежат в отрезке [10,99].
-int[] array()
-{
-    int [] arr  = new int [12];
-    for (int i = 0; i < arr.Length; i++)
-    {
-        arr[i]= new Random().Next(-10,11);
-    } 
-    return arr;
-} 
- void Print(int [] array)
-{
-      for (int i = 0; i <array.Length; i++)
-     {
-           Console.Write ($"{array[i]} ");
+// int[] array()
+// {
+//     int [] arr  = new int [12];
+//     for (int i = 0; i < arr.Length; i++)
+//     {
+//         arr[i]= new Random().Next(-10,11);
+//     } 
+//     return arr;
+// } 
+//  void Print(int [] array)
+// {
+//       for (int i = 0; i <array.Length; i++)
+//      {
+//            Console.Write ($"{array[i]} ");
            
-    }
-    Console.WriteLine();
- }
- int QuantityInTheArea(int[]array,int n,int m)
-{
-    int count=0;
- for (int i = 0; i <array.Length; i++)
- {
-    if(array[i]>n&&array[i]<m) count++;
-    if(array[i]<n&&array[i]>m) count++;  
- }
- return count;
-}
- Console.Write("Введити числа между которыми будем искать значения  ");
-int a=Convert.ToInt32(Console.ReadLine());
-int b=Convert.ToInt32(Console.ReadLine());
-int [] newarray = array();
-Print(newarray);
-int sum = QuantityInTheArea(newarray,a,b);
-Console .ForegroundColor = ConsoleColor.Blue;
-Console.Write($"Количество элементов между {a} и {b}  значениями {sum} ");
+//     }
+//     Console.WriteLine();
+//  }
+//  int QuantityInTheArea(int[]array,int n,int m)
+// {
+//     int count=0;
+//  for (int i = 0; i <array.Length; i++)
+//  {
+//     if(array[i]>n&&array[i]<m) count++;
+//     if(array[i]<n&&array[i]>m) count++;  
+//  }
+//  return count;
+// }
+//  Console.Write("Введити числа между которыми будем искать значения  ");
+// int a=Convert.ToInt32(Console.ReadLine());
+// int b=Convert.ToInt32(Console.ReadLine());
+// int [] newarray = array();
+// Print(newarray);
+// int sum = QuantityInTheArea(newarray,a,b);
+// Console .ForegroundColor = ConsoleColor.Blue;
+// Console.Write($"Количество элементов между {a} и {b}  значениями {sum} ");
 
 
+// Разворот массива
 //Напишите программу, которая перевернёт одномерный массив (последний элемент будет на первом месте, а первый - на последнем и т.д.)
+// int [] CreateRandomArray()
+// {
+// Console.WriteLine("input a number of elements");
+// int size = Convert.ToInt32(Console.ReadLine());
+// Console.WriteLine("input a number of max elements");
+// int max = Convert.ToInt32(Console.ReadLine());
+// Console.WriteLine("input a number of min elements");
+// int min = Convert.ToInt32(Console.ReadLine());
+// int [] arr=new int [size];
+// for (int i = 0; i < arr.Length; i++)
+// {
+//     arr[i]=new Random().Next(min,max+1);
+// }
+// return arr;
+// }
+// void Print(int[]arr)
+// {
+// for (int i = 0; i < arr.Length; i++)
+// {
+//    Console.Write(arr[i]+" "); 
+// }
+// Console.WriteLine();
+// }
+
+// int[] ArrayReversal(int []arr)
+// {
+
+// for (int j = arr.Length-1, i = 0; i <= j; i++,j--)
+// {
+//     int temp = arr[i];
+//     arr[i]=arr[j];
+//     arr[j]=temp;
+// }
+// return arr;
+// }
+// int []arr = CreateRandomArray();
+// Print(arr);
+// ArrayReversal(arr);
+// Print(arr);
+
+
 // Напишите программу, которая принимает на вход три числа и проверяет, может ли существовать треугольник с сторонами такой длины.
+// bool ExistanTriangli(double a,double b,double c)
+// {
+//     bool answer ;
+//     if(a<b+c && b<c+a && c<b+a) answer= true; 
+//     else answer = false;
+//     return answer;
+// }
+// Console.WriteLine("input a number  a");
+// double a = Convert.ToDouble(Console.ReadLine());
+// Console.WriteLine("input a number b");
+// double b = Convert.ToDouble(Console.ReadLine());
+// Console.WriteLine("input a number c");
+// double c = Convert.ToDouble(Console.ReadLine());
+// Console.WriteLine($"Может существовать треугольник с даными сторонами {ExistanTriangli(a,b,c)} ");
 //Напишите программу, которая будет создавать копию заданного массива с помощью поэлементного копирования.
+
 //Не используя рекурсию, выведите первые N чисел Фибоначчи. Первые два числа Фибоначчи: a и b.
+int [] arr (int size, int a ,int b )
+{
+    int [] arr = new int [size];
+    arr[0]= a;
+    arr[1]= b;
+for (int i = 2; i <arr.Length; i++)
+{
+    arr[i]= arr[i-2]+arr[i-1];
+}
+return arr;
+}
+void Print(int[]arr)
+ {
+for (int i = 0; i < arr.Length; i++)
+{
+   Console.Write(arr[i]+" "); 
+}
+Console.WriteLine();
+}
+
+Console.WriteLine("input a number of elements");
+int size = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("input a number of  a");
+int a = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("input a number of b");
+int b = Convert.ToInt32(Console.ReadLine());
+int [] newarr= arr(size,a,b);
+Print (newarr);

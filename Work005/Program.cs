@@ -64,9 +64,9 @@
 // int SumOfOddElements(int [] array)
 // {
 //     int sum = 0;
-//     for (int i = 0; i <array.Length; i++)
+//     for (int i = 1; i <array.Length; i+=2)
 //     {
-//         if (array[i]%2>0) sum+=array[i]; 
+//         sum+=array[i]; 
 //     }
 //     return sum;
 // }
@@ -78,7 +78,7 @@
 // Print(newarray);
 // int sum = SumOfOddElements(newarray);
 // Console .ForegroundColor = ConsoleColor.Blue;
-// Console.Write($"Сумма не четных элеметов в массиве равно {sum} ");
+// Console.Write($"Сумма элементов, стоящих на нечётных позициях> {sum} ");
 
 
 //Задайте массив вещественных чисел. Найдите разницу между максимальным и минимальным элементов массива.
@@ -125,45 +125,3 @@
 
 
 
-//Найдите произведение пар чисел в одномерном массиве. 
-//Парой считаем первый и последний элемент, второй и предпоследний и т.д. Результат запишите в новом массиве.
-
-int[] array(int size)
-{
-    int [] arr  = new int [size];
-    for (int i = 0; i < arr.Length; i++)
-    {
-        arr[i]= new Random().Next(1,10);
-    } 
-    return arr;
-} 
- void Print(int [] array)
-{
-      for (int i = 0; i <array.Length; i++)
-     {
-           Console.Write ($"{array[i]} ");
-    }
-    Console.WriteLine();
- }
- int[] ProductofPairs(int [] array)
- {
-  
-    int size = array.Length;
-    int size2=array.Length;
-    int[]arr=new int []{};
-    for (int i = 0; i <size2/2; i++)
-    {
-     
-        arr[i]=array[i]*array[size-1];
-        size--;
-        
-    }
-    return arr;
- }
-Console.Write("Введити колиство генерируемых цифр ");
-int a=Convert.ToInt32(Console.ReadLine());
-int [] newarray = array(a);
-Print(newarray);
-int[] sum = ProductofPairs(newarray);
-Console .ForegroundColor = ConsoleColor.Blue;
-Print(sum);
