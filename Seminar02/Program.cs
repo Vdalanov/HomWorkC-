@@ -367,31 +367,147 @@
 //Напишите программу, которая будет создавать копию заданного массива с помощью поэлементного копирования.
 
 //Не используя рекурсию, выведите первые N чисел Фибоначчи. Первые два числа Фибоначчи: a и b.
-int [] arr (int size, int a ,int b )
+// int [] arr (int size, int a ,int b )
+// {
+//     int [] arr = new int [size];
+//     arr[0]= a;
+//     arr[1]= b;
+// for (int i = 2; i <arr.Length; i++)
+// {
+//     arr[i]= arr[i-2]+arr[i-1];
+// }
+// return arr;
+// }
+// void Print(int[]arr)
+//  {
+// for (int i = 0; i < arr.Length; i++)
+// {
+//    Console.Write(arr[i]+" "); 
+// }
+// Console.WriteLine();
+// }
+
+// Console.WriteLine("input a number of elements");
+// int size = Convert.ToInt32(Console.ReadLine());
+// Console.WriteLine("input a number of  a");
+// int a = Convert.ToInt32(Console.ReadLine());
+// Console.WriteLine("input a number of b");
+// int b = Convert.ToInt32(Console.ReadLine());
+// int [] newarr= arr(size,a,b);
+// Print (newarr);
+
+//Двумерные массивы 
+// int [,] CreateRandom2Array()
+// {
+//     Console.Write("Input a number of rows: ");
+//     int rows = Convert.ToInt32(Console.ReadLine());
+//     Console.Write("Input a number of columns: ");
+//     int columns = Convert.ToInt32(Console.ReadLine());
+//     Console.Write("Input a min possible value: ");
+//     int minValue = Convert.ToInt32(Console.ReadLine());
+//     Console.Write("Input a max possible value: ");
+//     int maxValue = Convert.ToInt32(Console.ReadLine());
+//     int [,] array = new int [rows, columns];
+//     for (int i = 0; i < rows; i++)
+//     {
+//         for (int j = 0; j < columns; j++)
+//         {
+//             array[i,j] = new Random().Next(minValue,maxValue+1);
+//         }
+//     }
+//     return array;
+// }
+
+void Show2dArray(int[,]array)
 {
-    int [] arr = new int [size];
-    arr[0]= a;
-    arr[1]= b;
-for (int i = 2; i <arr.Length; i++)
+    for (int i = 0; i < array.GetLength(0); i++)
+    {
+        for (int j = 0; j < array.GetLength(1); j++)
+        {
+           Console.Write (array[i,j]+" "); 
+        }
+        Console.WriteLine();
+    }
+    Console.WriteLine();
+}
+// int [,] myArray = CreateRandom2Array();
+// Show2dArray(myArray);
+
+//Задайте двумерный массив размера m на n,
+// каждый элемент в массиве находится по формуле: Aij = i+j. Выведите полученный массив на экран.
+// int [,] ArraySumIndex()
+// {
+//         Console.Write("Input a number of rows: ");
+//     int rows = Convert.ToInt32(Console.ReadLine());
+//     Console.Write("Input a number of columns: ");
+//     int columns = Convert.ToInt32(Console.ReadLine());
+//     int[,] array = new int [rows,columns]; 
+//     for (int i = 0; i < array.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < array.GetLength(1); j++)
+//         {
+//             array[i,j]= i+j;
+//         }
+   
+//     }
+//      return array;
+// }
+// int [,] myArray = ArraySumIndex();
+// Show2dArray(myArray);
+
+
+//Задайте двумерный массив. Найдите элементы, у которых оба индекса чётные, и замените эти элементы на их квадраты.
+int [,] CreateRandom2Array()
 {
-    arr[i]= arr[i-2]+arr[i-1];
-}
-return arr;
-}
-void Print(int[]arr)
- {
-for (int i = 0; i < arr.Length; i++)
-{
-   Console.Write(arr[i]+" "); 
-}
-Console.WriteLine();
+    Console.Write("Input a number of rows: ");
+    int rows = Convert.ToInt32(Console.ReadLine());
+    Console.Write("Input a number of columns: ");
+    int columns = Convert.ToInt32(Console.ReadLine());
+    Console.Write("Input a min possible value: ");
+    int minValue = Convert.ToInt32(Console.ReadLine());
+    Console.Write("Input a max possible value: ");
+    int maxValue = Convert.ToInt32(Console.ReadLine());
+    int [,] array = new int [rows, columns];
+    for (int i = 0; i < rows; i++)
+    {
+        for (int j = 0; j < columns; j++)
+        {
+            array[i,j] = new Random().Next(minValue,maxValue+1);
+        }
+    }
+    return array;
 }
 
-Console.WriteLine("input a number of elements");
-int size = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine("input a number of  a");
-int a = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine("input a number of b");
-int b = Convert.ToInt32(Console.ReadLine());
-int [] newarr= arr(size,a,b);
-Print (newarr);
+// void SquareOfEvenIndices(int [,]array)
+// {
+//     for (int i = 0; i < array.GetLength(0); i+=2)
+//     {
+//     for (int j = 0; j < array.GetLength(1); j+=2)
+//         {
+//             array[i,j]*=array[i,j];
+//         }
+//     }
+// }
+// int [,] myArray = CreateRandom2Array();
+// Show2dArray(myArray);
+// SquareOfEvenIndices(myArray);
+// Show2dArray(myArray);
+
+//Задайте двумерный массив. Найдите сумму элементов, находящихся на главной диагонали (с индексами (0,0); (1;1) и т.д.
+// int SumMainDiagonal(int [,]array)
+// {
+//     int sum = 0;
+//     for (int i = 0; i < array.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < array.GetLength(1); j++)
+//         {
+//             if (i==j)
+//             sum+= array[i,j];
+//         }
+      
+//     }
+//   return sum;
+// }
+// int [,] myArray = CreateRandom2Array();
+// Show2dArray(myArray);
+// Console.WriteLine($"Сумма элементов на главной диаганали >{SumMainDiagonal(myArray)}");
