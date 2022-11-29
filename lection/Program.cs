@@ -233,3 +233,20 @@ while (index<n)
 // PrintArray(arr);
 // SelectionSort(arr);
 // PrintArray(arr);
+
+string NumbersFor(int a, int b)
+{
+    string result=String.Empty;
+    for (int i = a; i <=b; i++)
+    {
+        result+=$"{i} ";
+    }
+    return result;
+}
+string NumbersRec(int a,int b)
+{
+    if(a<b) return $" {a}" + NumbersRec (a+1 ,b );
+    else return $" {b}";
+}
+Console.WriteLine(NumbersFor(2,11));
+System.Console.WriteLine(NumbersRec(2,11));

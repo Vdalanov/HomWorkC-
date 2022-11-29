@@ -511,3 +511,175 @@ int [,] CreateRandom2Array()
 // int [,] myArray = CreateRandom2Array();
 // Show2dArray(myArray);
 // Console.WriteLine($"Сумма элементов на главной диаганали >{SumMainDiagonal(myArray)}");
+
+//Задайте двумерный массив. Напишите программу, которая заменяет строки на столбцы. В случае, если это невозможно, программа должна вывести сообщение для пользователя.
+
+
+
+// void ChangeArray(int[,] array)
+// {
+//     if (array.GetLength(0)== array.GetLength(1))
+//     {
+//         for (int i=0; i < array.GetLength(0)-1;i++)
+//             for (int j = i+1;j< array.GetLength(1);j++)
+//             {
+//                 int temp= array[i,j];
+//                 array[i,j]= array[j,i];
+//                 array[j,i] = temp;
+//             }
+//     }       
+//     else 
+//         Console.WriteLine("It,s impossible");
+    
+// }
+// int [,] myArray = CreateRandom2Array();Show2dArray(myArray);
+// ChangeArray(myArray);
+// Show2dArray(myArray);
+
+//Задайте двумерный массив. Напишите программу, которая поменяет местами первую и последнюю строку массива.
+// int [,] StringReplacement(int [,]array)
+// {
+//     for (int i = 0; i < array.GetLength(0); i++)
+//     {
+//        if(i==array.GetLength(0)-1) 
+//         for (int j = 0; j < array.GetLength(1); j++)
+//         {
+//         int temp= array[i,j];
+//         array[i,j]= array[0,j];
+//         array[0,j] = temp;
+//         }
+//     }
+//     return array;
+// }
+// int [,] myArray = CreateRandom2Array();Show2dArray(myArray);
+// StringReplacement(myArray);
+// Show2dArray(myArray);
+
+
+
+
+//Из двумерного массива целых чисел удалить строку и столбец, на пересечении которых расположен наименьший элемент.
+int [,] DeletуRowsLine(int[,]array)
+{
+    int min = array[0,0] ;
+    int min1=0;
+    int min2=0; 
+    for (int i = 0; i < array.GetLength(0); i++)
+    {
+        for (int j = 0; j < array.GetLength(1); j++)
+        {
+           if(array[i,j]<min) 
+           {
+            min = array[i,j];
+            min1=i;
+            min2=j;
+           }
+        }
+    }
+    int [,] myarray = new int [array.GetLength(0)-1,array.GetLength(1)-1];
+    for (int i=0,n=0; i < array.GetLength(0); i++,n++)
+        {
+            if(i==min1) 
+            {
+                n--;
+                continue;
+            }   
+           
+            for (int j = 0,m=0; j < array.GetLength(1); j++,m++)
+            {
+                if(j==min2)
+                {
+                    m--;
+                    continue;
+                }          
+                myarray[n,m]=array[i,j];
+            }
+        
+        }
+        return myarray;
+}
+
+int [,] myArray = CreateRandom2Array();
+Show2dArray(myArray);
+int [,]array=DeletуRowsLine(myArray);
+Show2dArray(array);
+//Сформируйте трёхмерный массив из неповторяющихся двузначных чисел. Напишите программу, которая будет построчно выводить массив, добавляя индексы каждого элемента.
+// int [,,] random3dArray ()
+// {
+// Console.Write("Input a number of строки: ");
+//     int rows = Convert.ToInt32(Console.ReadLine());
+//     Console.Write("Input a number of столбцы: ");
+//     int columns = Convert.ToInt32(Console.ReadLine());
+//     Console.Write("Input a number of высота: ");
+//     int height = Convert.ToInt32(Console.ReadLine());
+//     int [,,] array = new int [rows,columns,height];
+//      int [,,] newarray = new int [rows,columns,height];
+//     for (int i = 0; i < array.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < array.GetLength(1); j++)
+//         {
+
+//             for (int k = 0; k < array.GetLength(2); k++)
+//             {         
+//                     array[i,j,k]=new Random().Next(10,18);
+                    
+//             }
+//         }
+//     }
+//     return array;
+// }
+
+// void Print3darray(int [,,] array)
+// {
+
+//   for (int i = 0; i < array.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < array.GetLength(1); j++)
+//         {
+//             for (int k = 0; k < array.GetLength(2); k++)
+//             {
+//                 Console.WriteLine($"{array[i,j,k]}({i},{j},{k})");
+//             }
+//         }
+//     }
+//     Console.WriteLine();
+
+// }
+
+// int randomAll(int [,,]array)
+// {
+// int sum=0;
+//       for (int i = 0; i < array.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < array.GetLength(1); j++)
+//         {
+//             for (int k = 1; k < array.GetLength(2); k++)
+//             {
+//                 sum = array[i,j,k];
+//                for (int q = i; q < array.GetLength(0); q++)
+//                {
+                
+//                for (int w = j; w < array.GetLength(1); w++)
+//                {
+//                     for (int e = k+1; e < array.GetLength(2); e++)
+//                 {
+//                      if (sum==array[q,w,e])
+//                     {
+//                         sum=array[q,w,e];
+                        
+                
+//                     }
+//                 }
+//                }
+//                }
+//             }
+//         }
+//     }
+//     return sum;
+// }
+
+
+
+// int[,,]array=random3dArray();
+// Print3darray(array);
+// Console.WriteLine(randomAll(array));
